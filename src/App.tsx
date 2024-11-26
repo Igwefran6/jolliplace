@@ -66,9 +66,12 @@ const App: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="my-4"
+              onClick={() =>
+                menuRef.current?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               <span className="px-4 py-2  w-fit text-2xl rounded fugaz-one-regular font-bold text-primary-dark cursor-pointer bg-secondary hover:bg-secondary-dark">
-                See Menu
+                See Our Menu
               </span>
             </motion.button>
           </div>
