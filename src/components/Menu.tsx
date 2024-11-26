@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Menu = () => {
@@ -5,59 +6,180 @@ const Menu = () => {
   const menuItems = [
     {
       id: 1,
-      food: "Margherita Pizza",
-      description: "Classic cheese and tomato pizza",
-      price: 8.99,
-      category: "Pizza",
+      food: "Jollof Rice",
+      description: "Fried rice with a rich tomato sauce and spices",
+      price: 5000, // ₦5000
+      category: "Rice",
     },
     {
       id: 2,
-      food: "Pepperoni Pizza",
-      description: "Topped with spicy pepperoni slices",
-      price: 10.99,
-      category: "Pizza",
+      food: "Fried Rice",
+      description: "Rice cooked with vegetables and spices",
+      price: 5500, // ₦5500
+      category: "Rice",
     },
     {
       id: 3,
-      food: "Caesar Salad",
-      description: "Crisp romaine lettuce with Caesar dressing",
-      price: 7.99,
-      category: "Salad",
+      food: "Pounded Yam & Egusi Soup",
+      description: "Pounded yam served with melon seed soup",
+      price: 8000, // ₦8000
+      category: "Swallow & Soup",
     },
     {
       id: 4,
-      food: "Greek Salad",
-      description: "Feta cheese, olives, and fresh vegetables",
-      price: 9.99,
-      category: "Salad",
+      food: "Efo Riro",
+      description: "Spinach stew with meat or fish",
+      price: 7000, // ₦7000
+      category: "Soup",
     },
     {
       id: 5,
-      food: "Chicken Alfredo",
-      description: "Pasta in a creamy Alfredo sauce",
-      price: 12.99,
-      category: "Pasta",
+      food: "Ogbono Soup",
+      description: "Soup made from wild mango seeds and meats",
+      price: 7500, // ₦7500
+      category: "Soup",
     },
     {
       id: 6,
-      food: "Spaghetti Bolognese",
-      description: "Pasta with a rich meat sauce",
-      price: 11.99,
-      category: "Pasta",
+      food: "Pepper Soup",
+      description: "Spicy broth with meat or fish",
+      price: 6000, // ₦6000
+      category: "Soup",
     },
     {
       id: 7,
-      food: "Garlic Bread",
-      description: "Freshly baked with garlic butter",
-      price: 4.99,
-      category: "Sides",
+      food: "Suya",
+      description: "Spicy grilled meat skewer, typically served with onions",
+      price: 3000, // ₦3000
+      category: "Appetizer",
     },
     {
       id: 8,
-      food: "Tiramisu",
-      description: "Classic Italian dessert with coffee and cream",
-      price: 6.99,
-      category: "Desserts",
+      food: "Moi Moi",
+      description: "Steamed bean pudding with spices",
+      price: 2500, // ₦2500
+      category: "Appetizer",
+    },
+    {
+      id: 9,
+      food: "Asun",
+      description: "Spicy grilled goat meat, popular as a street food",
+      price: 3500, // ₦3500
+      category: "Appetizer",
+    },
+    {
+      id: 10,
+      food: "Eba & Ogbono Soup",
+      description: "Cassava flour dough served with wild mango seed soup",
+      price: 8500, // ₦8500
+      category: "Swallow & Soup",
+    },
+    {
+      id: 11,
+      food: "Bitterleaf Soup",
+      description: "Soup made from bitterleaf, vegetables, and meats",
+      price: 9000, // ₦9000
+      category: "Soup",
+    },
+    {
+      id: 12,
+      food: "Gizdodo",
+      description: "A mixture of gizzard and plantain cooked in spicy sauce",
+      price: 4500, // ₦4500
+      category: "Side Dish",
+    },
+    {
+      id: 13,
+      food: "Akara",
+      description: "Fried bean cakes, often eaten as breakfast",
+      price: 3000, // ₦3000
+      category: "Snack",
+    },
+    {
+      id: 14,
+      food: "Nkwobi",
+      description:
+        "Cow foot cooked in a spicy sauce, a popular Nigerian delicacy",
+      price: 7500, // ₦7500
+      category: "Appetizer",
+    },
+    {
+      id: 15,
+      food: "Ofada Rice & Ayamase",
+      description:
+        "Special Nigerian rice served with green pepper sauce and meats",
+      price: 9500, // ₦9500
+      category: "Rice",
+    },
+    {
+      id: 16,
+      food: "Boli",
+      description: "Grilled plantain served with groundnut or pepper sauce",
+      price: 3500, // ₦3500
+      category: "Snack",
+    },
+    {
+      id: 17,
+      food: "Nigerian Pancakes",
+      description: "Sweet or savory pancakes, a popular breakfast dish",
+      price: 2000, // ₦2000
+      category: "Breakfast",
+    },
+    {
+      id: 18,
+      food: "Jollof Rice & Grilled Chicken",
+      description: "Jollof rice served with grilled chicken",
+      price: 10000, // ₦10000
+      category: "Rice",
+    },
+    {
+      id: 19,
+      food: "Yam Porridge",
+      description: "Yams cooked with tomatoes, pepper, and spinach",
+      price: 5500, // ₦5500
+      category: "Vegetarian",
+    },
+    {
+      id: 20,
+      food: "Pounded Yam & Nsala Soup",
+      description: "Pounded yam served with white soup made from catfish",
+      price: 10500, // ₦10500
+      category: "Swallow & Soup",
+    },
+    {
+      id: 21,
+      food: "Okra Soup",
+      description: "Okra cooked with meat or fish, served with swallow",
+      price: 7500, // ₦7500
+      category: "Soup",
+    },
+    {
+      id: 22,
+      food: "Fried Plantain",
+      description: "Ripe plantains fried to a crisp golden perfection",
+      price: 2500, // ₦2500
+      category: "Side Dish",
+    },
+    {
+      id: 23,
+      food: "Catfish Peppersoup",
+      description: "Spicy catfish cooked in a flavorful broth",
+      price: 8000, // ₦8000
+      category: "Soup",
+    },
+    {
+      id: 24,
+      food: "Nkwobi & Ugba",
+      description: "Cow foot dish with oil bean salad",
+      price: 7000, // ₦7000
+      category: "Appetizer",
+    },
+    {
+      id: 25,
+      food: "Coconut Rice",
+      description: "Rice cooked with coconut milk and spices",
+      price: 6000, // ₦6000
+      category: "Rice",
     },
   ];
 
@@ -77,8 +199,7 @@ const Menu = () => {
 
   return (
     <div className="w-full min-h-screen bg-primary pt-16">
-      {" "}
-      <div className="p-6 max-w-4xl mx-auto ">
+      <div className="p-6 max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-4 text-center fugaz-one-regular text-secondary">
           Menu
         </h1>
@@ -101,18 +222,26 @@ const Menu = () => {
         {/* Menu Items */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {filteredMenu.map((item) => (
-            <div
+            <motion.div
               key={item.id}
               className="border rounded-lg p-4 shadow-md bg-white hover:shadow-lg transition"
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.2 },
+              }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5 }}
             >
               <h2 className="text-xl font-semibold text-primary mb-2">
                 {item.food}
               </h2>
               <p className="text-gray-600">{item.description}</p>
               <p className="text-lg font-bold text-secondary mt-2">
-                ${item.price.toFixed(2)}
+                ₦{item.price.toFixed(2)}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
