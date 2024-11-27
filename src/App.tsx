@@ -2,9 +2,17 @@ import { motion } from "framer-motion";
 import Footer from "./components/Footer";
 import Menu from "./components/Menu";
 import Navigation from "./components/Navigation";
-import React, { useRef } from "react";
+import React, { Suspense, useRef } from "react";
+import Loading from "./components/Loading";
+import { ImageLoader } from "./utils/ImageLoader";
 
-const App: React.FC = () => {
+interface ImageProps {
+  src: string;
+  alt?: string;
+}
+
+const AppToRender: React.FC<ImageProps> = ({ src }) => {
+  ImageLoader(src);
   const heroRef = useRef<HTMLDivElement | null>(null);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
@@ -76,7 +84,16 @@ const App: React.FC = () => {
             </motion.button>
           </div>
 
-          <div className="w-full lg:w-1/2 h-1/2 lg:h-full bg-slate-700 p-4 bg-[url('./images/food/2.jpg')] bg-no-repeat bg-fixed bg-cover lg:bg-center bg-top"></div>
+          <div
+            className="w-full lg:w-1/2 h-1/2 lg:h-full bg-slate-700 p-4 "
+            style={{
+              background: `url(${src})`,
+              backgroundAttachment: "fixed",
+              objectFit: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          ></div>
         </div>
         <div
           ref={menuRef}
@@ -238,6 +255,15 @@ const App: React.FC = () => {
       </main>
       <Footer refs={refs} />
     </div>
+  );
+};
+
+const App = () => {
+  const src = "./images/food/food-img.jpg";
+  return (
+    <Suspense fallback={<Loading />}>
+      <AppToRender src={src} />
+    </Suspense>
   );
 };
 

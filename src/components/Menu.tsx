@@ -198,7 +198,7 @@ const Menu = () => {
       : menuItems.filter((item) => item.category === selectedCategory);
 
   return (
-    <div className="w-full min-h-screen bg-primary pt-16">
+    <div className="w-full min-h-screen bg-primary pt-16 z-0">
       <div className="p-6 max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-4 text-center fugaz-one-regular text-secondary">
           Menu
@@ -225,10 +225,6 @@ const Menu = () => {
             <motion.div
               key={item.id}
               className="border rounded-lg p-4 shadow-md bg-white hover:shadow-lg transition"
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.2 },
-              }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
