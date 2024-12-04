@@ -197,7 +197,7 @@ const AppToRender: React.FC<ImageProps> = ({ src }) => {
           >
             <div className="container mx-auto">
               <h2 className="text-3xl font-bold text-secondary text-center mb-8 fugaz-one-regular">
-                Meet Our Team
+                Meet Our Chefs
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* Team Member 1 */}
@@ -209,9 +209,9 @@ const AppToRender: React.FC<ImageProps> = ({ src }) => {
                   viewport={{ once: true }}
                 >
                   <img
-                    src="https://via.placeholder.com/150"
+                    src="/images/chef.png"
                     alt="Chef John"
-                    className="w-24 h-24 mx-auto rounded-full mb-4"
+                    className="w-24 h-24 border-primary-dark border-4 mx-auto rounded-full mb-4"
                   />
                   <h3 className="text-xl font-semibold">Chef John</h3>
                   <p className="text-gray-600">Head Chef</p>
@@ -225,9 +225,9 @@ const AppToRender: React.FC<ImageProps> = ({ src }) => {
                   viewport={{ once: true }}
                 >
                   <img
-                    src="https://via.placeholder.com/150"
+                    src="/images/chef2.png"
                     alt="Manager Lisa"
-                    className="w-24 h-24 mx-auto rounded-full mb-4"
+                    className="w-24 h-24 border-primary-dark border-4 mx-auto rounded-full mb-4"
                   />
                   <h3 className="text-xl font-semibold">Lisa Smith</h3>
                   <p className="text-gray-600">General Manager</p>
@@ -241,9 +241,9 @@ const AppToRender: React.FC<ImageProps> = ({ src }) => {
                   viewport={{ once: true }}
                 >
                   <img
-                    src="https://via.placeholder.com/150"
+                    src="/images/chef3.png"
                     alt="Pastry Chef Ana"
-                    className="w-24 h-24 mx-auto rounded-full mb-4"
+                    className="w-24 h-24 border-primary-dark border-4 mx-auto rounded-full mb-4"
                   />
                   <h3 className="text-xl font-semibold">Ana Lee</h3>
                   <p className="text-gray-600">Pastry Chef</p>
